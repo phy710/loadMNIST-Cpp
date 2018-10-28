@@ -13,7 +13,15 @@ int main(void)
 	vector<char> testLabels;
 	loadMNISTImages("t10k-images.idx3-ubyte", testImages);
 	loadMNISTLabels("t10k-labels.idx1-ubyte", testLabels);
-	showMNIST(trainImages, trainLabels, 35642);
-	system("pause");
+	unsigned int n;
+	while (true)
+	{
+		cout << "Please choose a number: ";
+		cin >> n;
+		if (n < 60000)
+			showMNIST(trainImages, trainLabels, n);
+		else
+			break;		
+	}
 	return 0;
 }
